@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background-image: url(image/2.jpeg);
+}
+
+.filter-section, .job-listings {
+    margin-bottom: 20px;
+}
+
+label, select {
+    margin-right: 10px;
+}
+
+.job {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}

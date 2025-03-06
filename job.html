@@ -4,43 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-        }
-        .filter-section, .job-listings {
-            margin-bottom: 20px;
-        }
-        label, select {
-            margin-right: 10px;
-        }
-        .job {
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #ddd;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet"  href="job.css">
+    <link rel="stylesheet"  href="job.js">
 </head>
+
 <body>
     <header>
         <h1>Job Listings</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="job.html">Job-Listings</a>
-            <a href="contact.html">Contact</a>
+            <a href="Contact/Contact.html">Contact</a>
         </nav>
     </header>
     <main>
@@ -84,24 +58,7 @@
             </div>
         </section>
     </main>
-    <script>
-        function applyFilters() {
-            const jobType = document.getElementById("job-type").value;
-            const location = document.getElementById("location").value;
-            const jobs = document.querySelectorAll(".job");
-
-            jobs.forEach(job => {
-                const matchesType = jobType === "all" || job.getAttribute("data-type") === jobType;
-                const matchesLocation = location === "all" || job.getAttribute("data-location") === location;
-
-                if (matchesType && matchesLocation) {
-                    job.style.display = "block";
-                } else {
-                    job.style.display = "none";
-                }
-            });
-        }
-    </script>
+    
     <footer>
         &copy; 2025 My Homepage. All rights reserved.
     </footer>
