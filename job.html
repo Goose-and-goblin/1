@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .filter-section, .job-listings {
+            margin-bottom: 20px;
+        }
+        label, select {
+            margin-right: 10px;
+        }
+        .job {
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Job Listings</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="job.html">Job-Listings</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="filter-section">
+            <h2>Filter Jobs</h2>
+            <form>
+                <label for="job-type">Job Type:</label>
+                <select id="job-type">
+                    <option value="all">All</option>
+                    <option value="internship">Internship</option>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
+                </select>
+                <label for="location">Location:</label>
+                <select id="location">
+                    <option value="all">All</option>
+                    <option value="remote">Remote</option>
+                    <option value="onsite">Onsite</option>
+                </select>
+                <button type="button" onclick="applyFilters()">Apply Filters</button>
+            </form>
+        </section>
+        <section class="job-listings">
+            <h2>Available Jobs</h2>
+            <div id="job-container">
+                <div class="job" data-type="internship" data-location="remote">
+                    <h3>Web Developer Intern</h3>
+                    <p>Location: Remote</p>
+                    <p>Type: Internship</p>
+                </div>
+                <div class="job" data-type="full-time" data-location="onsite">
+                    <h3>Software Engineer</h3>
+                    <p>Location: Onsite</p>
+                    <p>Type: Full-Time</p>
+                </div>
+                <div class="job" data-type="part-time" data-location="remote">
+                    <h3>Data Analyst</h3>
+                    <p>Location: Remote</p>
+                    <p>Type: Part-Time</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function applyFilters() {
+            const jobType = document.getElementById("job-type").value;
+            const location = document.getElementById("location").value;
+            const jobs = document.querySelectorAll(".job");
+
+            jobs.forEach(job => {
+                const matchesType = jobType === "all" || job.getAttribute("data-type") === jobType;
+                const matchesLocation = location === "all" || job.getAttribute("data-location") === location;
+
+                if (matchesType && matchesLocation) {
+                    job.style.display = "block";
+                } else {
+                    job.style.display = "none";
+                }
+            });
+        }
+    </script>
+    <footer>
+        &copy; 2025 My Homepage. All rights reserved.
+    </footer>
+</body>
+</html>
