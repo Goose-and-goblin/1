@@ -12,9 +12,23 @@ header {
     text-align: center;
 }
 
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
 main {
     padding: 20px;
-    background-image: url(image/2.jpeg);
+    text-align: center;
+    background-image: url("image/2.jpeg");
+    background-repeat: 2;
+    background-size: cover;
 }
 
 .filter-section, .job-listings {
